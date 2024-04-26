@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://phase1-fa-db.cp06secgmtok.ap-southeast-1.rds.amazonaws.com:5432/phase1DB
+    username: postgres
+    password: 12345678
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: fams.automatic.noreply@gmail.com
+    password: ccvlrfjitjlwurmw
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      max-file-size: 128MB
+      max-request-size: 128MB
+
+app:
+  jwt-secret: f2a8eaca88afbce3d63682f93dfd1a7b9c849ad4fc1fd16c3fc6234d60f773f0
+  jwt-expiration-milliseconds: 604880000
+
+server:
+  port: 5000
+
+#aws credentials
+aws:
+  accessKey: AKIAZQ3DPVZ3OFKBIJEW
+  secretKey: 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
+  region: ap-southeast-2
+  s3:
+    bucketName: storageurls3
+
+#phase1-fa-db.cp06secgmtok.ap-southeast-1.rds.amazonaws.com
