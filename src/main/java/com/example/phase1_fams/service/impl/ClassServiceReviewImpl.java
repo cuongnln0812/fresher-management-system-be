@@ -120,6 +120,7 @@ public class ClassServiceReviewImpl implements ClassService {
     public ClassDetailsRes getClassDetails(Long classId) {
         Class aClass = classRepository.findById(classId)
                 .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND, "Class not found!"));
+        //TODO: fix latel
         return classConverter.convertToDetailsRes(aClass);
     }
 
@@ -142,6 +143,8 @@ public class ClassServiceReviewImpl implements ClassService {
         Set<ClassUser> updatedClassUserSet = new HashSet<>();
         classUserRepository.deleteAllByaClass(existingClass);
         //Set admin
+        //TODO: fix latel
+
         Users admin = usersRepository.findById(sessionReq.getAdminId())
                 .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND, "User not found"));
         if (admin.getRole().getRoleId() == 2){
@@ -199,6 +202,9 @@ public class ClassServiceReviewImpl implements ClassService {
                 }
             }
         }
+
+        //TODO: fix latel
+
         aClass.setCode(code);
         aClass.setName(classReq.getName());
         aClass.setLocation(classReq.getLocation());
